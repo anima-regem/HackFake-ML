@@ -10,7 +10,7 @@ class InputData(BaseModel):
 
 @app.post("/predict")
 async def predict(input_data: InputData):
-    input_text = str(input_data.text)
+    input_text = str(input_data.heading) + " - " + str(input_data.text)
     print(input_text)
     confidence_levels = test.predict(input_text)
     return confidence_levels
