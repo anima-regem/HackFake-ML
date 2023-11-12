@@ -10,10 +10,11 @@ class InputData(BaseModel):
 
 @app.post("/predict", response_class=JSONResponse)
 async def predict(input_data: InputData):
-    input_text = input_data.heading + " " + input_data.text
+    input_text = str(input_data.text)
+    print(input_text)
     confidence_levels = test.predict(input_text)
     return confidence_levels
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.1", port=8000)
