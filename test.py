@@ -22,4 +22,4 @@ def predict(input_text):
     return confidence_levels
 
 if __name__ == "__main__":
-    print(predict(input()))
+    print(predict(input("Waiting for input: ")))
