@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, JSONResponse
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import test
 
@@ -8,7 +8,7 @@ class InputData(BaseModel):
     heading: str
     text: str
 
-@app.post("/predict", response_class=JSONResponse)
+@app.post("/predict")
 async def predict(input_data: InputData):
     input_text = str(input_data.text)
     print(input_text)
