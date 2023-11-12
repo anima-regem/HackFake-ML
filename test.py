@@ -21,7 +21,7 @@ def predict(input_text):
 
     confidence_levels = {}
     for label, prob in zip(class_labels, predicted_probabilities):
-        confidence_levels[label] = prob
+        confidence_levels[label] = f"{prob}"
         print(f"{label}: {prob}")
     
     return confidence_levels
